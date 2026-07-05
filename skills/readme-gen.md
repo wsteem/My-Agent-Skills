@@ -1,7 +1,9 @@
-# Skill: README Generator
-**Version:** 1.0.0
-**Description:** Generates or refreshes a README for the current project based on what's actually in the codebase.
-**Last Updated:** 2026-07-05
+---
+Name: readme-gen
+Version: 1.0.1
+Description: Generates or refreshes a README for the current project based on what's actually in the codebase.
+Last Updated: 2026-07-05
+---
 
 ## Instructions
 

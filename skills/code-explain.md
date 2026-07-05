@@ -1,7 +1,9 @@
-# Skill: Code Explain
-**Version:** 1.0.0
-**Description:** Explains a file or code snippet in plain language, tailored to someone unfamiliar with that part of the codebase.
-**Last Updated:** 2026-07-05
+---
+Name: code-explain
+Version: 1.0.1
+Description: Explains a file or code snippet in plain language, tailored to someone unfamiliar with that part of the codebase.
+Last Updated: 2026-07-05
+---
 
 ## Instructions
 

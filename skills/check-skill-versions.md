@@ -1,7 +1,9 @@
-# Skill: Check Skill Versions
-**Version:** 1.0.0
-**Description:** Scans all skill files in this repo and reports their current versions, flagging any that may need updating.
-**Last Updated:** 2026-07-05
+---
+Name: Check-skill-versions
+Version: 1.0.1
+Description: Scans all globally cloned skills and compares their verison against the latest GitHub repo version, then provides an update report. 
+Last Updated: 2026-07-05
+---
 
 ## Instructions
 

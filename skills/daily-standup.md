@@ -1,7 +1,9 @@
-# Skill: Daily Standup
-**Version:** 1.0.0
-**Description:** Helps you quickly format your daily standup — what you did, what's next, and any blockers.
-**Last Updated:** 2026-07-05
+---
+Name: daily-standup
+Version: 1.0.1
+Description: Helps you quickly format your daily standup — what you did, what's next, and any blockers.
+Last Updated: 2026-07-05
+---
 
 ## Instructions
 

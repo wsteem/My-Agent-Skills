@@ -1,7 +1,9 @@
-# Skill: Project Health
-**Version:** 1.0.0
-**Description:** Gives a quick health snapshot of the current project — git status, recent commits, and any obvious issues.
-**Last Updated:** 2026-07-05
+---
+Name: project-health
+Version: 1.0.1
+Description: Gives a quick health snapshot of the current project — git status, recent commits, and any obvious issues.
+Last Updated: 2026-07-05
+---
 
 ## Instructions
 
