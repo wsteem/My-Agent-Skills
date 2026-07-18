@@ -1,23 +1,26 @@
 ---
-Name: readme-gen
-Version: 1.0.1
-Description: Generates or refreshes a README for the current project based on what's actually in the codebase.
-Last Updated: 2026-07-05
+name: readme-gen
+version: 1.1.0
+description: Generates a README when a project has none, or reviews recent repo changes and updates the existing README.md to match — only touching sections that actually need it.
+lastUpdated: 2026-07-18
 ---
 
 ## Instructions
 
-When this skill is invoked, analyze the current project and produce a README. Follow these steps:
+### Step 1: Check whether a README already exists
 
-### Step 1: Understand the project
+**No README (new project/repo):** Generate a complete one from scratch — go to Step 2 (Full Generation).
+
+**README already exists:** Don't regenerate it wholesale. Instead review what's changed and update only the parts that are now out of date — go to Step 3 (Incremental Update).
+
+### Step 2: Full generation (new project/repo only)
+
 Read the following to build context (use what's available, skip what's not):
 - `package.json`, `pyproject.toml`, `*.csproj`, or equivalent — for project name, description, dependencies, scripts
 - Entry point files (e.g., `main.py`, `index.js`, `Program.cs`, `App.tsx`)
-- Any existing README (to preserve sections the user has already written)
 - `.env.example` — for environment variable documentation
 - Top-level folder structure — to infer architecture
 
-### Step 2: Generate the README
 Write a README with these sections (skip any that don't apply to the project):
 
 ```markdown
@@ -50,7 +53,19 @@ Brief explanation of top-level folders
 ## License
 ```
 
-### Step 3: Confirm before writing
-Show the generated README to the user and ask if they want to save it. If a README already exists, show a diff of what would change and ask before overwriting.
+Then go to Step 4.
+
+### Step 3: Incremental update (existing README)
+
+- Look at what's actually changed in the repo: `git log`/`git diff` since the README's last update (or recent commits/uncommitted changes if that's not determinable), plus the current state of the codebase.
+- Compare those changes against what the README currently says. Look specifically for things like: new features or commands worth listing, changed installation/usage steps, new or removed environment variables, new top-level folders, a changed dependency/prerequisite, or a skill/feature list (like the table in this repo's own README) that's now stale.
+- **Not every change belongs in the README.** Internal refactors, formatting-only diffs, test changes, and other things a user of the README wouldn't care about should be left alone.
+- Only edit the sections that need it — leave the rest of the README untouched, including any custom sections the user has written that aren't part of the standard template.
+
+### Step 4: Confirm and apply
+
+Show the user a concise summary of what changed (or, for a new README, that one was generated) — a short bullet list, not the full file dump unless they ask for it. Ask if they'd like the updates applied.
+
+If they accept: write the file immediately, no further confirmation needed. If they want changes, adjust and re-confirm.
 
 Keep the tone professional but approachable. Avoid filler phrases like "This project aims to..." — just state what it does directly.

@@ -10,11 +10,12 @@ Skills are markdown files that give Claude Code a specific set of instructions w
 
 | Skill | Version | Description |
 |---|---|---|
-| `check-skill-versions` | 1.0.0 | Scans all skills in this repo and reports their versions |
-| `project-health` | 1.0.0 | Quick snapshot of the current project: git status, recent commits, issues |
-| `daily-standup` | 1.0.0 | Formats what you worked on as a standup-style summary |
-| `readme-gen` | 1.0.0 | Generates or refreshes a README for the current project |
-| `code-explain` | 1.0.0 | Explains a file or code snippet in plain language |
+| `check-skill-versions` | 1.1.0 | Compares your installed skills against this repo's versions and reports what's outdated |
+| `bump-version` | 1.0.0 | Automatically bumps a skill's version and lastUpdated metadata (semver) after you edit it |
+| `project-health` | 1.0.1 | Quick snapshot of the current project: git status, recent commits, issues |
+| `daily-standup` | 1.0.1 | Formats what you worked on as a standup-style summary |
+| `readme-gen` | 1.1.0 | Creates a README for new projects, or incrementally updates an existing one to match repo changes |
+| `code-explain` | 1.0.1 | Explains a file or code snippet in plain language |
 
 ## Version format
 
@@ -25,12 +26,14 @@ Each skill uses semantic versioning: `X.X.X`
 
 ## How to install a skill
 
-Copy any `.md` file from the `skills/` folder into your project's `.claude/skills/` directory. Then invoke it in Claude Code with `/skill-name` (the filename without `.md`).
+Copy any skill's folder from `skills/` into your project's `.claude/skills/` directory (each skill is a folder containing a `SKILL.md`, plus any supporting files). Then invoke it in Claude Code with `/skill-name`.
 
 ```
 your-project/
   .claude/
     skills/
-      project-health.md
-      readme-gen.md
+      project-health/
+        SKILL.md
+      readme-gen/
+        SKILL.md
 ```
